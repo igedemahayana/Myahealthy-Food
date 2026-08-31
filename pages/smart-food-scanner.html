@@ -11,6 +11,9 @@
   <link rel="stylesheet" href="/css/style.css">
   <script src="https://cdn.tailwindcss.com"></script>
 
+  <!-- Boxicons -->
+  <link href="https://cdn.boxicons.com/3.0.8/fonts/basic/boxicons.min.css" rel="stylesheet" />
+
   <!-- Font: Plus Jakarta Sans -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -20,7 +23,205 @@
 
 <body class="bg-[#FAF9F6] text-[#5B6168] antialiased min-h-screen flex flex-col items-center">
 
-  <main id="beranda" class="mx-auto max-w-[1420px] w-full px-6 py-10 md:px-10 lg:px-[100px]">
+  <header class="sticky top-0 w-full border-b border-stone-200 bg-white relative z-50">
+    <div class="mx-auto flex max-w-[1240px] items-center justify-between gap-4 px-6 py-3 md:px-6 lg:px-8">
+
+      <!-- Logo -->
+      <a href="#" class="flex items-center gap-2">
+        <span>
+          <img src="/assets/icons/Logo.svg" alt="" loading="lazy">
+        </span>
+        <span class="text-[22px] font-semibold tracking-tight text-[#FF8C42]">Myahealth</span>
+      </a>
+
+      <!-- Desktop nav -->
+      <nav class="hidden flex-1 items-center gap-1 lg:flex">
+        <a href="/index.html" target="_blank"
+          class="rounded-md px-3 py-2 text-[16px] font-medium text-[#5B6168] hover:underline hover:bg-stone-100 ">
+          Beranda
+        </a>
+
+        <div class="relative" data-dropdown="layanan-desktop">
+          <button type="button"
+            class="dropdown-trigger flex items-center gap-1 rounded-md px-3 py-2 text-[16px] font-medium text-[#FF8C42] hover:bg-stone-100"
+            aria-expanded="false" aria-haspopup="true">
+            Layanan
+            <i class="bx bx-chevron-down"></i>
+          </button>
+
+          <div
+            class="dropdown-panel absolute left-0 top-full mt-2 hidden w-80 rounded-xl border border-stone-200 bg-white p-2 shadow-lg"
+            role="menu">
+
+            <a href="#" role="menuitem" class="flex items-start gap-3 rounded-lg p-3 hover:bg-stone-50">
+              <span>
+                <img src="/assets/icons/Smart-Food-Scanner.svg" alt="Smart Food Scanner" loading="lazy">
+              </span>
+              <span>
+                <span class="block text-sm font-semibold text-[#FF8C42]">Smart Food Scanner</span>
+                <span class="mt-1 block text-xs leading-tight text-[#5B6168]">
+                  Scan makananmu dan kenali kandungan gizinya dengan mudah.
+                </span>
+              </span>
+            </a>
+
+            <a href="/pages/food-swap-assistant.html" target="_blank" role="menuitem"
+              class="flex items-start gap-3 rounded-lg p-3 hover:bg-stone-50">
+              <span>
+                <img src="/assets/icons/Food-Swap-Assistant.svg" alt="Food Swap Assistant" loading="lazy">
+              </span>
+              <span>
+                <span class="block text-sm font-semibold text-[#FF8C42]">
+                  Food Swap Assistant
+                </span>
+                <span class="mt-1 block text-xs leading-tight text-[#5B6168]">
+                  Dapatkan rekomendasi makanan yang sesuai dengan kondisi tubuhmu.
+                </span>
+              </span>
+            </a>
+
+            <a href="/pages/tracker-health.html" target="_blank" role="menuitem"
+              class="flex items-start gap-3 rounded-lg p-3 hover:bg-stone-50">
+              <span>
+                <img src="/assets/icons/Tracker-Heath.svg" alt="Tracker Health" loading="lazy">
+              </span>
+              <span>
+                <span class="block text-sm font-semibold text-[#FF8C42]">
+                  Tracker Health
+                </span>
+                <span class="mt-1 block text-xs leading-tight text-[#5B6168]">
+                  Pantau perjalanan hidup sehatmu dan raih EXP setiap hari.
+                </span>
+              </span>
+            </a>
+          </div>
+        </div>
+
+        <a href="#"
+          class="rounded-md px-3 py-2 text-[16px] font-medium text-[#5B6168] hover:bg-stone-100 hover:underline transition duration-300">
+          Progres Saya
+        </a>
+        <a href="#"
+          class="rounded-md px-3 py-2 text-[16px] font-medium text-[#5B6168] hover:bg-stone-100 hover:underline">
+          Komunitas
+        </a>
+      </nav>
+
+      <!-- Right cluster -->
+      <div class="flex items-center gap-2">
+
+        <!-- Profile -->
+        <div class="relative" data-dropdown="profile">
+          <button type="button"
+            class="dropdown-trigger flex items-center gap-1.5 rounded-full py-1 pl-1 pr-1.5 hover:bg-stone-100 lg:pr-2"
+            aria-expanded="false">
+            <img src="/assets/icons/Profile.svg" alt="Profile" loading="lazy">
+            <!-- Arrow Top to Arrow Bottom -->
+            <i class="bx bx-chevron-down"></i>
+          </button>
+
+          <div
+            class="dropdown-panel absolute right-0 top-full mt-2 hidden w-56 rounded-xl border border-stone-200 bg-white p-2 shadow-lg"
+            role="menu">
+            <div class="border-b border-stone-100 px-3 py-2.5">
+              <p class="text-sm font-semibold text-[#FF8C42]">Mahayana</p>
+              <p class="truncate text-xs text-stone-400">mahayana@gmail.com</p>
+            </div>
+            <a href="#" role="menuitem"
+              class="mt-1 flex items-center gap-2 rounded-lg px-3 py-2 text-sm text-stone-700 hover:bg-stone-50">
+              <i class="bx bx-dashboard"></i>
+              Dashboard
+            </a>
+            <button type="button" role="menuitem"
+              class="flex w-full items-center gap-2 rounded-lg px-3 py-2 text-left text-sm text-red-600 hover:bg-red-50">
+              <i class="bx bx-arrow-out-left-square-half"></i>
+              Logout
+            </button>
+          </div>
+        </div>
+
+        <!-- Hamburger (mobile & tablet only) -->
+        <button type="button" id="mobile-menu-btn"
+          class="flex h-9 w-9 items-center justify-center rounded-md hover:bg-stone-100 lg:hidden" aria-expanded="false"
+          aria-label="Buka menu">
+          <i id="icon-menu" class="bx bx-menu text-black text-2xl"></i>
+          <!-- <i id="icon-close" class="hiddenbx bx-x"></i> -->
+        </button>
+      </div>
+    </div>
+
+    <!-- Mobile & tablet menu -->
+    <nav id="mobile-menu" aria-label="Navigasi mobile"
+      class="hidden border-t border-stone-200 bg-white px-4 pb-4 pt-2 lg:hidden">
+      <a href="/index.html" target="_blank"
+        class="block rounded-md px-3 py-2.5 text-sm font-medium text-[#5B6168] hover:bg-stone-50">
+        Beranda
+      </a>
+
+      <button type="button" id="mobile-layanan-btn"
+        class="flex w-full items-center justify-between rounded-md px-3 py-2.5 text-sm font-medium text-[#FF8C42] hover:bg-stone-50"
+        aria-expanded="false">
+        Layanan
+        <i class="bx bx-chevron-down"></i>
+      </button>
+
+      <div id="mobile-layanan-panel" class="mb-1 ml-2 hidden border-l border-stone-200 pl-3">
+        <a href="/pages/smart-food-scanner.html" target="_blank"
+          class="flex items-start gap-3 rounded-lg px-2 py-2.5 hover:bg-stone-50">
+          <span>
+            <img src="/assets/icons/Smart-Food-Scanner.svg" alt="Smart Food Scanner" loading="lazy">
+          </span>
+          <span>
+            <span class="block text-sm font-semibold text-[#FF8C42]">
+              Smart Food Scanner
+            </span>
+            <span class="mt-1 block text-xs leading-tight text-[#5B6168]">
+              Scan makananmu dan kenali kandungan gizinya dengan mudah.
+            </span>
+          </span>
+        </a>
+
+        <a href="pages/food-swap-assistant.html" target="_blank"
+          class="flex items-start gap-3 rounded-lg px-2 py-2.5 hover:bg-stone-50">
+          <span>
+            <img src="/assets/icons/Food-Swap-Assistant.svg" alt="Food Swap Assistant" loading="lazy">
+          </span>
+          <span>
+            <span class="block text-sm font-semibold text-[#FF8C42]">
+              Food Swap Assistant
+            </span>
+            <span class="mt-1 block text-xs leading-tight text-[#5B6168]">
+              Dapatkan rekomendasi makanan yang sesuai dengan kondisi tubuhmu.
+            </span>
+          </span>
+        </a>
+
+        <a href="pages/tracker-health.html" target="_blank"
+          class="flex items-start gap-3 rounded-lg px-2 py-2.5 hover:bg-stone-50">
+          <span>
+            <img src="/assets/icons/Tracker-Heath.svg" alt="Tracker Health" loading="lazy">
+          </span>
+          <span>
+            <span class="block text-sm font-semibold text-[#FF8C42]">
+              Tracker Health
+            </span>
+            <span class="mt-1 block text-xs leading-tight text-[#5B6168]">
+              Pantau perjalanan hidup sehatmu dan raih EXP setiap hari.
+            </span>
+          </span>
+        </a>
+      </div>
+
+      <a href="#" class="block rounded-md px-3 py-2.5 text-sm font-medium text-[#5B6168] hover:bg-stone-50">
+        Progres Saya
+      </a>
+      <a href="#" class="block rounded-md px-3 py-2.5 text-sm font-medium text-[#5B6168] hover:bg-stone-50">
+        Komunitas
+      </a>
+    </nav>
+  </header>
+
+  <main id="beranda" class="mx-auto max-w-[1240px] w-full px-6 md:px-6 lg:px-8 py-[60px]">
 
     <div class="grid gap-12 lg:grid-cols-2 lg:items-center">
       <section class="flex flex-col items-start justify-center">
@@ -217,6 +418,7 @@
   </footer>
 
   <script src="/js/smart-food-scanner.js"></script>
+  <script src="/js/index.js"></script>
 </body>
 
 </html>

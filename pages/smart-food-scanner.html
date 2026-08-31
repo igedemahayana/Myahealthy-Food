@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Smart Food Scanner Myahealth untuk estimasi gizi makanan dari foto." />
+  <title>Smart Food Scanner | Myahealth</title>
+  <link rel="icon" href="/assets/icons/Myahealth-logo.svg">
+
+  <link rel="stylesheet" href="/css/style.css">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Plus+Jakarta+Sans:wght@600;700;800&display=swap"
+    rel="stylesheet" />
+</head>
+
+<body class="bg-[#FAF9F6] text-[#5B6168] antialiased min-h-screen flex items-center">
+
+  <main id="beranda" class="mx-auto max-w-[1420px] w-full px-6 py-10 md:px-10 lg:px-[100px]">
+
+    <div class="grid gap-12 lg:grid-cols-2 lg:items-center">
+      <section class="flex flex-col items-start justify-center">
+        <div
+          class="mb-6 flex items-center gap-2 rounded-full bg-[#FFE4D2] px-4 py-2 text-sm font-semibold text-[#FF8C42]">
+          <span>Smart Food Scanner</span>
+        </div>
+
+        <h1 class="text-[30px] md:text-[40px] lg:text-[56px] font-semibold leading-[1.1] text-[#1B1D1F]">
+          Satu Foto, Ungkap <span class="text-[#FF8C42]">Gula & Gizi</span> yang Bersembunyi.
+        </h1>
+
+        <p class="mt-6 max-w-xl text-[16px] md:text-[18px] text-[#5B6168] font-medium text-justify leading-tight">
+          Foto makanan atau minumanmu, dan Myahealth akan langsung menampilkan estimasi kadar gula serta komposisi
+          gizinya. lengkap dengan saran buah dan sayur pengganti, supaya tubuhmu tetap terkontrol.
+        </p>
+
+        <a href="#drop-zone"
+          class="mt-6 inline-flex items-center justify-center gap-2 rounded-full bg-[#FF8C42] px-[32px] py-[16px] text-base font-semibold text-white shadow-lg">
+          <span>Analisis & Cek Sekarang</span>
+        </a>
+      </section>
+
+      <section id="scanner" aria-labelledby="scanner-title" class="relative">
+
+        <article id="upload-card"
+          class="rounded-3xl border border-[#E7E4DD] bg-white p-6 shadow-xl transition-all duration-300 md:p-8">
+          <header class="mb-6">
+            <h2 id="scanner-title" class="text-[22px] text-[#FF8C42] font-semibold">
+              Cek Kandungan Makananmu
+            </h2>
+            <p class="mt-2 text-[14px] md:text-[16px] text-[#5B6168] font-regular leading-tight">
+              Unggah foto makanan atau minumanmu, biar Myahealth hitung kadar gula & gizinya untukmu.
+            </p>
+          </header>
+
+          <label id="drop-zone" for="food-image"
+            class="flex min-h-[250px] cursor-pointer flex-col items-center justify-center rounded-2xl border-2 border-dashed border-[#E7E4DD] px-5 text-center transition hover:border-[#F26B2E] md:min-h-[280px]">
+            <input id="food-image" type="file" accept="image/*" class="sr-only" />
+
+            <section id="upload-prompt" aria-hidden="true" class="flex flex-col items-center justify-center">
+              <img src="/assets/icons/Smart-Food-Scanner.svg" alt="" class="opacity-80 h-20 w-20">
+              <p class="mt-4 font-semibold text-[#1B1D1F]">
+                Taruh Foto Makananmu di Sini
+              </p>
+              <p id="upload-help" class="mt-2 text-sm text-[#8B9096]">
+                atau klik untuk memilih gambar
+              </p>
+              <p class="mt-3 text-xs text-[#8B9096]">
+                Menerima format JPG, PNG, atau HEIC (maks. 5MB)
+              </p>
+            </section>
+
+            <figure id="preview-wrap" class="relative hidden h-full w-full overflow-hidden rounded-2xl group"
+              aria-live="polite">
+              <img id="image-preview" class="h-[250px] w-full object-cover md:h-[280px]" alt="Pratinjau makanan" />
+
+              <span id="scanner-line"
+                class="absolute left-[5%] top-[8%] h-[3px] w-[90%] bg-[#F26B2E] opacity-0 transition-opacity [box-shadow:0_0_0_3px_#FDE4D5,0_0_12px_#F26B2E]"
+                aria-hidden="true"></span>
+
+              <div id="scanner-glow"
+                class="pointer-events-none absolute inset-0 opacity-0 transition-opacity bg-gradient-to-b from-transparent via-[#FDE4D5]/55 to-transparent"
+                aria-hidden="true"></div>
+
+              <figcaption id="file-name"
+                class="absolute bottom-3 left-3 rounded-full bg-white/90 backdrop-blur px-3 py-1.5 text-xs font-medium text-[#1B1D1F]">
+              </figcaption>
+            </figure>
+          </label>
+
+          <section class="mt-6 flex flex-col gap-3 sm:flex-row sm:items-center sm:justify-between">
+            <p id="status-message" class="text-sm text-[#5B6168]" role="status">
+              Belum ada foto yang dipilih.
+            </p>
+            <button id="analyze-button" type="button" disabled
+              class="rounded-full bg-[#F26B2E] px-6 py-3 text-sm font-semibold text-white transition hover:bg-[#D95A22] disabled:cursor-not-allowed disabled:opacity-50">
+              Lihat Kandungan Gizinya
+            </button>
+          </section>
+        </article>
+
+        <article id="result-card"
+          class="hidden rounded-3xl border border-[#E7E4DD] bg-white p-6 shadow-xl transition-all duration-300 md:p-8">
+          <header class="flex items-center justify-between border-b border-[#E7E4DD] pb-4">
+            <div>
+              <p class="text-[14px] font-semibold uppercase tracking-wider text-[#5B6168]">Hasil Analisis</p>
+              <h2 class="mt-1 text-[22px] font-semibold text-[#FF8C42]">
+                Estimasi Gizi Makanan
+              </h2>
+            </div>
+            <span id="sugar-badge" class="rounded-full px-3 py-1.5 text-[14px] font-bold"></span>
+          </header>
+
+          <div class="mt-6 space-y-6 max-h-[420px] overflow-y-auto pr-2">
+            <!-- Komposisi Gizi -->
+            <section aria-label="Komposisi gizi">
+              <h3 class="text-[16px] font-semibold text-[#1B1D1F] mb-3">Komposisi Nutrisi
+              </h3>
+              <dl id="nutrition-list" class="space-y-3.5"></dl>
+            </section>
+
+            <!-- Saran Buah & Sayur -->
+            <section class="border-t border-[#E7E4DD] pt-4">
+              <h3 class="text-sm font-bold text-[#1B1D1F] mb-3">
+                Saran Buah / Sayur Pengganti
+              </h3>
+              <section id="recommendation-list" class="grid gap-2.5 sm:grid-cols-2"></section>
+            </section>
+
+            <!-- Riwayat -->
+            <section class="border-t border-[#E7E4DD] pt-4">
+              <h3 class="text-sm font-bold text-[#1B1D1F] mb-2">
+                Riwayat Hari Ini
+              </h3>
+              <ul id="history-list" class="space-y-1.5 text-xs text-[#5B6168]"></ul>
+            </section>
+          </div>
+
+          <section class="mt-6 border-t border-[#E7E4DD] pt-4">
+            <button id="reset-button" type="button"
+              class="w-full rounded-full bg-[#F26B2E] px-[32px] py-[16px] text-sm font-medium text-white">
+              Scan Gambar Lain
+            </button>
+          </section>
+        </article>
+
+      </section>
+
+    </div>
+  </main>
+
+  <script src="/js/smart-food-scanner.js"></script>
+</body>
+
+</html>

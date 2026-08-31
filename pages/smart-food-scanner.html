@@ -10,14 +10,15 @@
 
   <link rel="stylesheet" href="/css/style.css">
   <script src="https://cdn.tailwindcss.com"></script>
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link
-    href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Plus+Jakarta+Sans:wght@600;700;800&display=swap"
-    rel="stylesheet" />
+
+  <!-- Font: Plus Jakarta Sans -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@200;300;400;500;600;700;800&display=swap"
+    rel="stylesheet">
 </head>
 
-<body class="bg-[#FAF9F6] text-[#5B6168] antialiased min-h-screen flex items-center">
+<body class="bg-[#FAF9F6] text-[#5B6168] antialiased min-h-screen flex flex-col items-center">
 
   <main id="beranda" class="mx-auto max-w-[1420px] w-full px-6 py-10 md:px-10 lg:px-[100px]">
 
@@ -148,9 +149,72 @@
         </article>
 
       </section>
-
     </div>
   </main>
+
+  <!-- Footer -->
+  <footer id=" footer-section" class="w-full mt-[160px]">
+    <div class="bg-[#FF8C42] text-white pt-16 pb-16 border-t border-white/10">
+      <div class="max-w-[1240px] mx-auto px-6 grid grid-cols-1 md:grid-cols-4 gap-8 pb-12">
+        <!-- Info Brand -->
+        <div>
+          <div class="flex items-center gap-2 font-medium text-lg mb-4">
+            <span><img src="/assets/icons/fruits.svg" alt="" class="w-8 h-8 rounded-md" loading="lazy"></span>
+            Myahealthy
+          </div>
+          <h3 class="text-md font-regular leading-6 max-w-xs">
+            Temani Perjalanan Sehatmu, Satu Pilihan Makan Setiap Hari
+          </h3>
+          <p class="text-xs text-white mt-6">© 2026 Myahealth. Seluruh hak cipta dilindungi.</p>
+        </div>
+
+        <!-- Features -->
+        <div>
+          <h4 class="text-white text-sm mb-2">Features</h4>
+          <div class="flex flex-col gap-[8px]">
+            <a href="" class="text-sm font-medium hover:underline hover:translate-x-2 transition duration-300">Smart
+              Food Scanner</a>
+            <a href="" class="text-sm font-medium hover:underline hover:translate-x-2 transition duration-300"">Ganti Ini, Makan Itu</a>
+              <a href="" class=" text-sm font-medium hover:underline hover:translate-x-2 transition
+              duration-300"">Tracker
+              Health</a>
+          </div>
+        </div>
+
+        <!-- Alamat -->
+        <div>
+          <h4 class="text-white text-sm mb-2">Alamat</h4>
+          <p class="text-sm font-medium">Karangasem, Bali</p>
+
+          <h4 class="text-white text-sm mt-6 mb-2">Email</h4>
+          <p class="text-sm font-medium">mahayanaa3@gmail.com</p>
+        </div>
+
+        <!-- Kontak -->
+        <div>
+          <h4 class="text-white text-sm mb-2">Kontak</h4>
+          <p class="text-sm font-medium">+62 887 366 24</p>
+        </div>
+      </div>
+
+      <!-- Big Typography -->
+      <div class="text-center my-8">
+        <h1
+          class="text-[56px] md:text-[130px] lg:text-[180px] text-center font-medium tracking-[-2px] text-white/90 hover:translate-y-[-4px] transition duration-300">
+          Myahealthy
+        </h1>
+      </div>
+
+      <!-- Back To Top Button -->
+      <div class="text-center mx-[20px] lg:mx-[120px] hover:translate-y-[-4px] transition duration-300">
+        <a href="#top"
+          class="flex w-full items-center justify-between gap-2 bg-white text-black px-6 py-3 rounded-[22px] font-semibold text-sm hover:bg-gray-200 transition">
+          <h1 class="text-[#111827] opacity-80">Kembali Ke Halaman Paling Atas</h1>
+          <span><img src="/assets/icons/Arrow-Top.svg" alt="Arrow Top" loading="lazy"></span>
+        </a>
+      </div>
+    </div>
+  </footer>
 
   <script src="/js/smart-food-scanner.js"></script>
 </body>

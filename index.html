@@ -8,10 +8,11 @@
   <link rel="icon" href="assets/icons/Myahealth-logo.svg">
   <title>Myahealthy</title>
 
-
   <!-- Tailwind CSS -->
   <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
 
+  <!-- Boxicons -->
+  <link href="https://cdn.boxicons.com/3.0.8/fonts/basic/boxicons.min.css" rel="stylesheet" />
 
   <!-- Font: Plus Jakarta Sans -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -27,14 +28,14 @@
 
 <body class="bg-[#F8F9FA] antialiased scroll-smooth overflow-x-hidden">
   <header class="w-full border-b border-stone-200 bg-white relative z-50">
-    <div class="mx-auto flex max-w-[1240px] items-center justify-between gap-4 p-4">
+    <div class="mx-auto flex max-w-[1240px] items-center justify-between gap-4 px-6 py-3 md:px-6 lg:px-8">
 
       <!-- Logo -->
       <a href="#" class="flex items-center gap-2">
         <span>
           <img src="assets/icons/Logo.svg" alt="" loading="lazy">
         </span>
-        <span class="text-[22px] font-bold tracking-tight text-[#FF8C42]">Myahealth</span>
+        <span class="text-[22px] font-semibold tracking-tight text-[#FF8C42]">Myahealth</span>
       </a>
 
       <!-- Desktop nav -->
@@ -48,11 +49,7 @@
             class="dropdown-trigger flex items-center gap-1 rounded-md px-3 py-2 text-[16px] font-medium text-[#5B6168] hover:bg-stone-100"
             aria-expanded="false" aria-haspopup="true">
             Layanan
-            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-              stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
-              class="dropdown-chevron h-4 w-4 transition-transform">
-              <path d="m6 9 6 6 6-6" />
-            </svg>
+            <i class="bx bx-chevron-down"></i>
           </button>
 
           <div
@@ -66,8 +63,7 @@
               <span>
                 <span class="block text-sm font-semibold text-[#FF8C42]">Smart Food Scanner</span>
                 <span class="mt-1 block text-xs leading-tight text-[#5B6168]">
-                  Lorem ipsum dolor sit amet, consectetur
-                  adipiscing elit sed do eiusmod.
+                  Scan makananmu dan kenali kandungan gizinya dengan mudah.
                 </span>
               </span>
             </a>
@@ -81,8 +77,7 @@
                   Ganti Ini, Makan Itu
                 </span>
                 <span class="mt-1 block text-xs leading-tight text-[#5B6168]">
-                  Ut enim ad minim veniam, quis nostrud
-                  exercitation ullamco laboris nisi.
+                  Dapatkan rekomendasi makanan yang sesuai dengan kondisi tubuhmu.
                 </span>
               </span>
             </a>
@@ -96,8 +91,7 @@
                   Tracker Health
                 </span>
                 <span class="mt-1 block text-xs leading-tight text-[#5B6168]">
-                  Duis aute irure dolor in reprehenderit in
-                  voluptate velit esse cillum.
+                  Pantau perjalanan hidup sehatmu dan raih EXP setiap hari.
                 </span>
               </span>
             </a>
@@ -117,50 +111,6 @@
       <!-- Right cluster -->
       <div class="flex items-center gap-2">
 
-        <!-- Notifications -->
-        <div class="relative" data-dropdown="notif">
-          <button type="button"
-            class="dropdown-trigger relative flex h-9 w-9 items-center justify-center rounded-full text-stone-600 hover:bg-stone-100"
-            aria-expanded="false" aria-label="Notifikasi">
-            <!-- Logo Notifications -->
-          </button>
-
-          <div
-            class="dropdown-panel absolute right-0 top-full mt-2 hidden w-80 rounded-xl border border-stone-200 bg-white shadow-lg"
-            role="menu">
-            <div class="flex items-center justify-between border-b border-stone-100 px-4 py-3">
-              <span class="text-sm font-semibold text-[#FF8C42]">Notifikasi</span>
-              <button type="button" class="text-xs font-medium text-[#FF8C42] hover:underline">
-                Tandai semua dibaca</button>
-            </div>
-            <ul>
-              <li class="flex items-start gap-3 border-b border-stone-50 px-4 py-3 hover:bg-stone-50">
-                <span class="mt-1.5 h-1.5 w-1.5 shrink-0 rounded-full bg-amber-500"></span>
-                <span>
-                  <span class="block text-sm text-stone-700">Lorem ipsum dolor sit amet</span>
-                  <span class="mt-0.5 block text-xs text-[#5B6168]">5 menit yang lalu</span>
-                </span>
-              </li>
-              <li class="flex items-start gap-3 border-b border-stone-50 px-4 py-3 hover:bg-stone-50">
-                <span class="mt-1.5 h-1.5 w-1.5 shrink-0 rounded-full bg-amber-500"></span>
-                <span>
-                  <span class="block text-sm text-stone-700">Sed do eiusmod tempor incididun</span>
-                  <span class="mt-0.5 block text-xs text-[#5B6168]">2 jam yang lalu</span>
-                </span>
-              </li>
-              <li class="flex items-start gap-3 px-4 py-3 hover:bg-stone-50">
-                <span class="mt-1.5 h-1.5 w-1.5 shrink-0 rounded-full bg-transparent"></span>
-                <span>
-                  <span class="block text-sm text-stone-700">Ut enim ad minim veniam quis</span>
-                  <span class="mt-0.5 block text-xs text-[#5B6168]">Kemarin</span>
-                </span>
-              </li>
-            </ul>
-            <a href="#" class="block px-4 py-3 text-center text-sm font-medium text-[#FF8C42] hover:bg-stone-50">
-              Lihat semua notifikasi</a>
-          </div>
-        </div>
-
         <!-- Profile -->
         <div class="relative" data-dropdown="profile">
           <button type="button"
@@ -168,11 +118,7 @@
             aria-expanded="false">
             <img src="assets/icons/Profile.svg" alt="Profile" loading="lazy">
             <!-- Arrow Top to Arrow Bottom -->
-            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-              stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
-              class="dropdown-chevron hidden h-4 w-4 text-[#FF8C42] transition-transform lg:block">
-              <path d="m6 9 6 6 6-6" />
-            </svg>
+            <i class="bx bx-chevron-down"></i>
           </button>
 
           <div
@@ -184,12 +130,12 @@
             </div>
             <a href="#" role="menuitem"
               class="mt-1 flex items-center gap-2 rounded-lg px-3 py-2 text-sm text-stone-700 hover:bg-stone-50">
-              <!-- <img src="" alt="Dashboard" loading="lazy"> -->
+              <i class="bx bx-dashboard"></i>
               Dashboard
             </a>
             <button type="button" role="menuitem"
               class="flex w-full items-center gap-2 rounded-lg px-3 py-2 text-left text-sm text-red-600 hover:bg-red-50">
-              <!-- <img src="" alt="Logout" loading="lazy"> -->
+              <i class="bx bx-arrow-out-left-square-half"></i>
               Logout
             </button>
           </div>
@@ -197,16 +143,10 @@
 
         <!-- Hamburger (mobile & tablet only) -->
         <button type="button" id="mobile-menu-btn"
-          class="flex h-9 w-9 items-center justify-center rounded-md text-emerald-900 hover:bg-stone-100 lg:hidden"
-          aria-expanded="false" aria-label="Buka menu">
-          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
-            stroke-linecap="round" stroke-linejoin="round" class="h-5 w-5" id="icon-menu">
-            <path d="M4 12h16M4 6h16M4 18h16" />
-          </svg>
-          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
-            stroke-linecap="round" stroke-linejoin="round" class="hidden h-5 w-5" id="icon-close">
-            <path d="M18 6 6 18M6 6l12 12" />
-          </svg>
+          class="flex h-9 w-9 items-center justify-center rounded-md hover:bg-stone-100 lg:hidden" aria-expanded="false"
+          aria-label="Buka menu">
+          <i id="icon-menu" class="bx bx-menu text-black text-2xl"></i>
+          <!-- <i id="icon-close" class="hiddenbx bx-x"></i> -->
         </button>
       </div>
     </div>
@@ -222,11 +162,7 @@
         class="flex w-full items-center justify-between rounded-md px-3 py-2.5 text-sm font-medium text-[#5B6168] hover:bg-stone-50"
         aria-expanded="false">
         Layanan
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
-          stroke-linecap="round" stroke-linejoin="round" class="h-4 w-4 transition-transform"
-          id="mobile-layanan-chevron">
-          <path d="m6 9 6 6 6-6" />
-        </svg>
+        <i class="bx bx-chevron-down"></i>
       </button>
 
       <div id="mobile-layanan-panel" class="mb-1 ml-2 hidden border-l border-stone-200 pl-3">
@@ -239,7 +175,7 @@
               Smart Food Scanner
             </span>
             <span class="mt-1 block text-xs leading-tight text-[#5B6168]">
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+              Scan makananmu dan kenali kandungan gizinya dengan mudah.
             </span>
           </span>
         </a>
@@ -253,7 +189,8 @@
               Ganti Ini, Makan Itu
             </span>
             <span class="mt-1 block text-xs leading-tight text-[#5B6168]">
-              Ut enim ad minim veniam, quis nostrud exercitation.</span>
+              Dapatkan rekomendasi makanan yang sesuai dengan kondisi tubuhmu.
+            </span>
           </span>
         </a>
 
@@ -266,7 +203,8 @@
               Tracker Health
             </span>
             <span class="mt-1 block text-xs leading-tight text-[#5B6168]">
-              Duis aute irure dolor in reprehenderit involuptate.</span>
+              Pantau perjalanan hidup sehatmu dan raih EXP setiap hari.
+            </span>
           </span>
         </a>
       </div>
@@ -287,7 +225,6 @@
 
       </div>
     </section>
-    <!-- Mengenal Myahealthy Section -->
 
     <!-- About Section -->
     <section id="about-section" class="w-full">

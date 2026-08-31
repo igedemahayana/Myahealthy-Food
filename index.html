@@ -26,15 +26,267 @@
 </head>
 
 <body class="bg-[#F8F9FA] antialiased scroll-smooth overflow-x-hidden">
-  <header>
-    <nav>
+  <header class="w-full border-b border-stone-200 bg-white relative z-50">
+    <div class="mx-auto flex max-w-[1240px] items-center justify-between gap-4 p-4">
 
+      <!-- Logo -->
+      <a href="#" class="flex items-center gap-2">
+        <span>
+          <img src="assets/icons/Logo.svg" alt="" loading="lazy">
+        </span>
+        <span class="text-[22px] font-bold tracking-tight text-[#FF8C42]">Myahealth</span>
+      </a>
+
+      <!-- Desktop nav -->
+      <nav class="hidden flex-1 items-center gap-1 lg:flex">
+        <a href="#" class="rounded-md px-3 py-2 text-[16px] font-medium text-[#FF8C42] underline hover:bg-stone-100 ">
+          Beranda
+        </a>
+
+        <div class="relative" data-dropdown="layanan-desktop">
+          <button type="button"
+            class="dropdown-trigger flex items-center gap-1 rounded-md px-3 py-2 text-[16px] font-medium text-[#5B6168] hover:bg-stone-100"
+            aria-expanded="false" aria-haspopup="true">
+            Layanan
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+              stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+              class="dropdown-chevron h-4 w-4 transition-transform">
+              <path d="m6 9 6 6 6-6" />
+            </svg>
+          </button>
+
+          <div
+            class="dropdown-panel absolute left-0 top-full mt-2 hidden w-80 rounded-xl border border-stone-200 bg-white p-2 shadow-lg"
+            role="menu">
+
+            <a href="#" role="menuitem" class="flex items-start gap-3 rounded-lg p-3 hover:bg-stone-50">
+              <span>
+                <!-- Logo Fitur 1 -->
+              </span>
+              <span>
+                <span class="block text-sm font-semibold text-[#FF8C42]">Smart Food Scanner</span>
+                <span class="mt-1 block text-xs leading-tight text-[#5B6168]">
+                  Lorem ipsum dolor sit amet, consectetur
+                  adipiscing elit sed do eiusmod.
+                </span>
+              </span>
+            </a>
+
+            <a href="#" role="menuitem" class="flex items-start gap-3 rounded-lg p-3 hover:bg-stone-50">
+              <span>
+                <!-- Logo Fitur 2 -->
+              </span>
+              <span>
+                <span class="block text-sm font-semibold text-[#FF8C42]">
+                  Ganti Ini, Makan Itu
+                </span>
+                <span class="mt-1 block text-xs leading-tight text-[#5B6168]">
+                  Ut enim ad minim veniam, quis nostrud
+                  exercitation ullamco laboris nisi.
+                </span>
+              </span>
+            </a>
+
+            <a href="#" role="menuitem" class="flex items-start gap-3 rounded-lg p-3 hover:bg-stone-50">
+              <span>
+                <!-- Logo Fitur 3 -->
+              </span>
+              <span>
+                <span class="block text-sm font-semibold text-[#FF8C42]">
+                  Tracker Health
+                </span>
+                <span class="mt-1 block text-xs leading-tight text-[#5B6168]">
+                  Duis aute irure dolor in reprehenderit in
+                  voluptate velit esse cillum.
+                </span>
+              </span>
+            </a>
+          </div>
+        </div>
+
+        <a href="#"
+          class="rounded-md px-3 py-2 text-[16px] font-medium text-[#5B6168] hover:bg-stone-100 hover:underline transition duration-300">
+          Progres Saya
+        </a>
+        <a href="#"
+          class="rounded-md px-3 py-2 text-[16px] font-medium text-[#5B6168] hover:bg-stone-100 hover:underline">
+          Komunitas
+        </a>
+      </nav>
+
+      <!-- Right cluster -->
+      <div class="flex items-center gap-2">
+
+        <!-- Notifications -->
+        <div class="relative" data-dropdown="notif">
+          <button type="button"
+            class="dropdown-trigger relative flex h-9 w-9 items-center justify-center rounded-full text-stone-600 hover:bg-stone-100"
+            aria-expanded="false" aria-label="Notifikasi">
+            <!-- Logo Notifications -->
+          </button>
+
+          <div
+            class="dropdown-panel absolute right-0 top-full mt-2 hidden w-80 rounded-xl border border-stone-200 bg-white shadow-lg"
+            role="menu">
+            <div class="flex items-center justify-between border-b border-stone-100 px-4 py-3">
+              <span class="text-sm font-semibold text-[#FF8C42]">Notifikasi</span>
+              <button type="button" class="text-xs font-medium text-[#FF8C42] hover:underline">
+                Tandai semua dibaca</button>
+            </div>
+            <ul>
+              <li class="flex items-start gap-3 border-b border-stone-50 px-4 py-3 hover:bg-stone-50">
+                <span class="mt-1.5 h-1.5 w-1.5 shrink-0 rounded-full bg-amber-500"></span>
+                <span>
+                  <span class="block text-sm text-stone-700">Lorem ipsum dolor sit amet</span>
+                  <span class="mt-0.5 block text-xs text-[#5B6168]">5 menit yang lalu</span>
+                </span>
+              </li>
+              <li class="flex items-start gap-3 border-b border-stone-50 px-4 py-3 hover:bg-stone-50">
+                <span class="mt-1.5 h-1.5 w-1.5 shrink-0 rounded-full bg-amber-500"></span>
+                <span>
+                  <span class="block text-sm text-stone-700">Sed do eiusmod tempor incididun</span>
+                  <span class="mt-0.5 block text-xs text-[#5B6168]">2 jam yang lalu</span>
+                </span>
+              </li>
+              <li class="flex items-start gap-3 px-4 py-3 hover:bg-stone-50">
+                <span class="mt-1.5 h-1.5 w-1.5 shrink-0 rounded-full bg-transparent"></span>
+                <span>
+                  <span class="block text-sm text-stone-700">Ut enim ad minim veniam quis</span>
+                  <span class="mt-0.5 block text-xs text-[#5B6168]">Kemarin</span>
+                </span>
+              </li>
+            </ul>
+            <a href="#" class="block px-4 py-3 text-center text-sm font-medium text-[#FF8C42] hover:bg-stone-50">
+              Lihat semua notifikasi</a>
+          </div>
+        </div>
+
+        <!-- Profile -->
+        <div class="relative" data-dropdown="profile">
+          <button type="button"
+            class="dropdown-trigger flex items-center gap-1.5 rounded-full py-1 pl-1 pr-1.5 hover:bg-stone-100 lg:pr-2"
+            aria-expanded="false">
+            <img src="assets/icons/Profile.svg" alt="Profile" loading="lazy">
+            <!-- Arrow Top to Arrow Bottom -->
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+              stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+              class="dropdown-chevron hidden h-4 w-4 text-[#FF8C42] transition-transform lg:block">
+              <path d="m6 9 6 6 6-6" />
+            </svg>
+          </button>
+
+          <div
+            class="dropdown-panel absolute right-0 top-full mt-2 hidden w-56 rounded-xl border border-stone-200 bg-white p-2 shadow-lg"
+            role="menu">
+            <div class="border-b border-stone-100 px-3 py-2.5">
+              <p class="text-sm font-semibold text-[#FF8C42]">Mahayana</p>
+              <p class="truncate text-xs text-stone-400">mahayana@gmail.com</p>
+            </div>
+            <a href="#" role="menuitem"
+              class="mt-1 flex items-center gap-2 rounded-lg px-3 py-2 text-sm text-stone-700 hover:bg-stone-50">
+              <!-- <img src="" alt="Dashboard" loading="lazy"> -->
+              Dashboard
+            </a>
+            <button type="button" role="menuitem"
+              class="flex w-full items-center gap-2 rounded-lg px-3 py-2 text-left text-sm text-red-600 hover:bg-red-50">
+              <!-- <img src="" alt="Logout" loading="lazy"> -->
+              Logout
+            </button>
+          </div>
+        </div>
+
+        <!-- Hamburger (mobile & tablet only) -->
+        <button type="button" id="mobile-menu-btn"
+          class="flex h-9 w-9 items-center justify-center rounded-md text-emerald-900 hover:bg-stone-100 lg:hidden"
+          aria-expanded="false" aria-label="Buka menu">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+            stroke-linecap="round" stroke-linejoin="round" class="h-5 w-5" id="icon-menu">
+            <path d="M4 12h16M4 6h16M4 18h16" />
+          </svg>
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+            stroke-linecap="round" stroke-linejoin="round" class="hidden h-5 w-5" id="icon-close">
+            <path d="M18 6 6 18M6 6l12 12" />
+          </svg>
+        </button>
+      </div>
+    </div>
+
+    <!-- Mobile & tablet menu -->
+    <nav id="mobile-menu" aria-label="Navigasi mobile"
+      class="hidden border-t border-stone-200 bg-white px-4 pb-4 pt-2 lg:hidden">
+      <a href="#" class="block rounded-md px-3 py-2.5 text-sm font-medium text-[#FF8C42] hover:bg-stone-50">
+        Beranda
+      </a>
+
+      <button type="button" id="mobile-layanan-btn"
+        class="flex w-full items-center justify-between rounded-md px-3 py-2.5 text-sm font-medium text-[#5B6168] hover:bg-stone-50"
+        aria-expanded="false">
+        Layanan
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+          stroke-linecap="round" stroke-linejoin="round" class="h-4 w-4 transition-transform"
+          id="mobile-layanan-chevron">
+          <path d="m6 9 6 6 6-6" />
+        </svg>
+      </button>
+
+      <div id="mobile-layanan-panel" class="mb-1 ml-2 hidden border-l border-stone-200 pl-3">
+        <a href="#" class="flex items-start gap-3 rounded-lg px-2 py-2.5 hover:bg-stone-50">
+          <span>
+            <!-- Logo Fitur 1 -->
+          </span>
+          <span>
+            <span class="block text-sm font-semibold text-[#FF8C42]">
+              Smart Food Scanner
+            </span>
+            <span class="mt-1 block text-xs leading-tight text-[#5B6168]">
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+            </span>
+          </span>
+        </a>
+
+        <a href="#" class="flex items-start gap-3 rounded-lg px-2 py-2.5 hover:bg-stone-50">
+          <span>
+            <!-- Logo Fitur 2 -->
+          </span>
+          <span>
+            <span class="block text-sm font-semibold text-[#FF8C42]">
+              Ganti Ini, Makan Itu
+            </span>
+            <span class="mt-1 block text-xs leading-tight text-[#5B6168]">
+              Ut enim ad minim veniam, quis nostrud exercitation.</span>
+          </span>
+        </a>
+
+        <a href="#" class="flex items-start gap-3 rounded-lg px-2 py-2.5 hover:bg-stone-50">
+          <span>
+            <!-- Logo Fitur 3 -->
+          </span>
+          <span>
+            <span class="block text-sm font-semibold text-[#FF8C42]">
+              Tracker Health
+            </span>
+            <span class="mt-1 block text-xs leading-tight text-[#5B6168]">
+              Duis aute irure dolor in reprehenderit involuptate.</span>
+          </span>
+        </a>
+      </div>
+
+      <a href="#" class="block rounded-md px-3 py-2.5 text-sm font-medium text-[#5B6168] hover:bg-stone-50">
+        Progres Saya
+      </a>
+      <a href="#" class="block rounded-md px-3 py-2.5 text-sm font-medium text-[#5B6168] hover:bg-stone-50">
+        Komunitas
+      </a>
     </nav>
   </header>
 
   <main>
     <!-- Hero Section -->
+    <section id="hero-section" class="w-full">
+      <div>
 
+      </div>
+    </section>
     <!-- Mengenal Myahealthy Section -->
 
     <!-- About Section -->
